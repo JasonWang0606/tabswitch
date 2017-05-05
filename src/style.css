@@ -28,13 +28,17 @@ body{background-color: #323232;font-size: 12px;}
 	color: #767676;
 }
 .tab-switch-wrapper .tab .nav-content-wrapper{
+	position: relative;
 	padding: 5px;
 	height: 200px;
 	background: #fff;
 	border-radius: 0 0 3px 3px;
+	overflow: hidden;
 }
 .tab-switch-wrapper .tab .nav-content-wrapper .content-item{
 	display: none;
+	position: absolute;
+	width: 290px;
 	height: 200px;
 	overflow: hidden;
 }

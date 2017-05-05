@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="tab-switch-wrapper">
-		<div class="tab">
+		<div class="js-tab tab" data-config='{"triggerType": "mouseover","effect": "fade","invoke": 2,"auto": 2000}'>
 			<ul class="tab-nav">
 				<li class="active"><a href="javascript:void(0);">新闻</a></li>
 				<li><a href="javascript:void(0);">社会</a></li>
@@ -24,4 +24,12 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript" src="./jquery.js"></script>
+<script type="text/javascript" src="./tabswitch.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//Tab
+		var tab1 = new Tab($(".js-tab").eq(0));
+	})
+</script>
 </html>
