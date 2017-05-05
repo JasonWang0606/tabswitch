@@ -33,11 +33,12 @@
 				_this.invoke($(this));
 			});
 		} else if (config.triggerType === "mouseover" || config.triggerType !== "click") {
-			this.tabItems.mouseover(function () {
+			this.tabItems.mouseover(function (event) {
 				var self = $(this);
 				this.timer = window.setTimeout(function () {
 					_this.invoke($(self));
 				}, 100);
+				event.stopPropagation();
 			}).mouseout(function () {
 				// 鼠标移出则清除切换，防止移动太快出现混乱
 				window.clearTimeout(this.timer);
@@ -58,6 +59,11 @@
 			}, function () {
 				_this.autoPlay();
 			});
+		}
+
+		// 设置默认显示第几个tab
+		if (config.invoke > 1) {
+			this.invoke(this.tabItems.eq(config.invoke-1));
 		}
 	};
 
@@ -122,8 +128,15 @@
 				this.loop = index;
 			}
 		}
-
 	};
 
+	Tab.init = function (tabs) {
+		var _this_ = this;
+		tabs.each(function () {
+			new _this_($(this));
+		});
+	}
+
 	window.Tab = Tab;
+	
 })(jQuery)
