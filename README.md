@@ -14,3 +14,6 @@
 
 	是否自动轮播：
 	"auto": false
+
+预览地址：
+https://jasonwang0606.github.io/tabswitch/src/tableswitch.html
